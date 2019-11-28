@@ -86,7 +86,7 @@ public class LeArquivo {
         return vr;
     }
     
-    public void LeValor(File arqD){
+    public void LeValor(File arqD, int m){
         ArrayList<String> retarq = new ArrayList<>();
         String arm;
         int k=0;
@@ -95,7 +95,7 @@ public class LeArquivo {
             BufferedReader in = new BufferedReader(file);
             String dimval = in.readLine();
             while ((dimval !=null)){
-                if(k==2){
+                if(k==m){
                     String[] numsep = dimval.split(" ");
                     setRed1(Integer.parseInt(numsep[0]));
                     setRed2(Integer.parseInt(numsep[1]));
@@ -120,7 +120,7 @@ public class LeArquivo {
         System.out.println(getRed3());
     }
     
-    public void ReduzValor(File arqV){
+    public void ReduzValor(File arqV, int m){
         ArrayList<String> atarq = new ArrayList<>();
         String arm2;
         int l=0;
@@ -129,7 +129,7 @@ public class LeArquivo {
             BufferedReader in = new BufferedReader(file);
             String atval = in.readLine();
             while ((atval !=null)){
-                if(l==2){
+                if(l==m){
                     String[] numsep = atval.split(" ");
                     setVis(Integer.parseInt(numsep[0]));
                     setLik(Integer.parseInt(numsep[1]));
@@ -158,7 +158,7 @@ public class LeArquivo {
                 FileWriter arq1 = new FileWriter(arqV);
                 try (PrintWriter gravarArq = new PrintWriter(arq1)) {
                     while(j<1000){
-                        if(j==2){
+                        if(j==m){
                             gravarArq.println(Reduz());
                             j++;
                         }else{
