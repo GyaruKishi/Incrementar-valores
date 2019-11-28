@@ -77,12 +77,13 @@ public class LeArquivo {
     
     
     
-    public void Reduz(){
+    public String Reduz(){
         setVis(this.vis-this.red1);
         setLik(this.lik-this.red2);
         setDis(this.dis-this.red3);
         String vr = Integer.toString(this.vis) + " " + Integer.toString(this.lik) + " " + Integer.toString(this.dis);
         System.out.println(vr);
+        return vr;
     }
     
     public void LeValor(File arqD){
@@ -119,7 +120,7 @@ public class LeArquivo {
         System.out.println(getRed3());
     }
     
-    public void ReduzValor(File arqD, File arqV){
+    public void ReduzValor(File arqV){
         ArrayList<String> atarq = new ArrayList<>();
         String arm2;
         int l=0;
@@ -133,7 +134,7 @@ public class LeArquivo {
                     setVis(Integer.parseInt(numsep[0]));
                     setLik(Integer.parseInt(numsep[1]));
                     setDis(Integer.parseInt(numsep[2]));
-                    arm2 =atval;           
+                    arm2 = atval;           
                     atval = in.readLine();
                     atarq.add(l, arm2);
                 }else{
@@ -148,9 +149,28 @@ public class LeArquivo {
              }catch(IOException exc) {
                 System.err.println("Erro");
             }
-        System.out.println(getVis());
-        System.out.println(getLik());
-        System.out.println(getDis());
+//        System.out.println(getVis());
+//        System.out.println(getLik());
+//        System.out.println(getDis());
+        int j=0;
+//        int tam = atarq.size();
+        try {
+                FileWriter arq1 = new FileWriter(arqV);
+                try (PrintWriter gravarArq = new PrintWriter(arq1)) {
+                    while(j<1000){
+                        if(j==2){
+                            gravarArq.println(Reduz());
+                            j++;
+                        }else{
+                            gravarArq.println(atarq.get(j));
+                            j++;    
+                        }
+                    }
+                }
+            }catch(IOException e){
+                System.out.println(e.getMessage());
+            }
+        }
     }
-}
+    //6207 1301 2249
 

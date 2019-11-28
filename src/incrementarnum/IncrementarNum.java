@@ -27,8 +27,8 @@ public class IncrementarNum {
         LeArquivo la = new LeArquivo();
         
         la.LeValor(arq2);
-        la.ReduzValor(arq2, arq1);
-        la.Reduz();
+        la.ReduzValor(arq1);
+//        la.Reduz();
     
 }
 }
