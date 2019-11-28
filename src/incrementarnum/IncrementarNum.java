@@ -6,9 +6,6 @@
 package incrementarnum;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 
 /**
  *
@@ -32,62 +29,6 @@ public class IncrementarNum {
         la.LeValor(arq2);
         la.ReduzValor(arq2, arq1);
         la.Reduz();
-        //Pega os itens do arquivo e passa pro Arraylist
-//        ArrayList<String> retarq = new ArrayList<>();
-//        String arm;
-//        Scanner s=new Scanner(System.in);
-//        String n,m;
-//        int k=0;
-//        try{
-//            Reader file = new FileReader(arq2);
-//            BufferedReader in = new BufferedReader(file);
-//            String dimval = in.readLine();
-//            while ((dimval !=null)){
-//                arm =dimval;           
-//                dimval = in.readLine();
-//                retarq.add(k, arm);
-//                k++;
-//            }
-//            file.close();
-//            in.close();
-//             }catch(IOException exc) {
-//                System.err.println("Erro");
-//            }
-//
-//    //Passa o novo membro pro Arraylist
-//        int j=0;
-//        Iterator t =espor.iterator();
-//        while(t.hasNext()){
-//            Esporte p = (Esporte)t.next();
-//            if(espo.getMat().equals(p.getMat())){
-//                v=1;
-//             break;
-//            }
-//        }
-//        if(v==1){
-//            return "Este praticante já está cadastrado nesta atividade";
-//        }else{
-//        espor.add(espo);
-//
-//    //Retorna o Arraylist com o novo membro pro Arqivo
-//        int i=0;
-//        int tam = espor.size();
-//        try {
-//            FileWriter arq1 = new FileWriter(arq);
-//            try (PrintWriter gravarArq = new PrintWriter(arq1)) {
-//                while(i<tam){
-//                gravarArq.println(espor.get(i).getNome());
-//                gravarArq.println(espor.get(i).getMat());
-//                i++;
-//                }
-//            }
-//        }catch(IOException e){
-//            System.out.println(e.getMessage());
-//        }
-//        return "";
-//        }
-//    }
-//    }
     
 }
 }
