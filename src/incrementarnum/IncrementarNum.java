@@ -29,7 +29,9 @@ public class IncrementarNum {
         
         LeArquivo la = new LeArquivo();
         
+        la.LeValor(arq2);
         la.ReduzValor(arq2, arq1);
+        la.Reduz();
         //Pega os itens do arquivo e passa pro Arraylist
 //        ArrayList<String> retarq = new ArrayList<>();
 //        String arm;

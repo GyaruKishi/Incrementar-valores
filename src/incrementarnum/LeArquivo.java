@@ -81,41 +81,43 @@ public class LeArquivo {
         setVis(this.vis-this.red1);
         setLik(this.lik-this.red2);
         setDis(this.dis-this.red3);
+        String vr = Integer.toString(this.vis) + " " + Integer.toString(this.lik) + " " + Integer.toString(this.dis);
+        System.out.println(vr);
     }
     
-//    public void LeValor(File arqD){
-//        ArrayList<String> retarq = new ArrayList<>();
-//        String arm;
-//        int k=0;
-//        try{
-//            Reader file = new FileReader(arqD);
-//            BufferedReader in = new BufferedReader(file);
-//            String dimval = in.readLine();
-//            while ((dimval !=null)){
-//                if(k==2){
-//                    String[] numsep = dimval.split(" ");
-//                    setRed1(Integer.parseInt(numsep[0]));
-//                    setRed2(Integer.parseInt(numsep[1]));
-//                    setRed3(Integer.parseInt(numsep[2]));
-//                    arm =dimval;           
-//                    dimval = in.readLine();
-//                    retarq.add(k, arm);
-//                }else{
-//                    arm =dimval;           
-//                    dimval = in.readLine();
-//                    retarq.add(k, arm);
-//                    }
-//                k++;
-//            }
-//            file.close();
-//            in.close();
-//             }catch(IOException exc) {
-//                System.err.println("Erro");
-//            }
-//        System.out.println(getRed1());
-//        System.out.println(getRed2());
-//        System.out.println(getRed3());
-//    }
+    public void LeValor(File arqD){
+        ArrayList<String> retarq = new ArrayList<>();
+        String arm;
+        int k=0;
+        try{
+            Reader file = new FileReader(arqD);
+            BufferedReader in = new BufferedReader(file);
+            String dimval = in.readLine();
+            while ((dimval !=null)){
+                if(k==2){
+                    String[] numsep = dimval.split(" ");
+                    setRed1(Integer.parseInt(numsep[0]));
+                    setRed2(Integer.parseInt(numsep[1]));
+                    setRed3(Integer.parseInt(numsep[2]));
+                    arm =dimval;           
+                    dimval = in.readLine();
+                    retarq.add(k, arm);
+                }else{
+                    arm =dimval;           
+                    dimval = in.readLine();
+                    retarq.add(k, arm);
+                    }
+                k++;
+            }
+            file.close();
+            in.close();
+             }catch(IOException exc) {
+                System.err.println("Erro");
+            }
+        System.out.println(getRed1());
+        System.out.println(getRed2());
+        System.out.println(getRed3());
+    }
     
     public void ReduzValor(File arqD, File arqV){
         ArrayList<String> atarq = new ArrayList<>();
