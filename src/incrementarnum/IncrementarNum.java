@@ -25,8 +25,8 @@ public class IncrementarNum {
         FileWriter b;
         
         LeArquivo la = new LeArquivo();
-        
-        for(int i=0;i<1001;i++){
+        int k = la.VerTam(arq1);
+        for(int i=0;i<k;i++){
             la.LeValor(arq2,i);
             la.ReduzValor(arq1,i);
         }
