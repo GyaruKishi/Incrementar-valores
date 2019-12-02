@@ -75,7 +75,26 @@ public class LeArquivo {
         this.dis = dis;
     }
     
-    
+    public int VerTam(File arq){
+        String arm;
+        int k=0;
+        try{
+            Reader file = new FileReader(arq);
+            BufferedReader in = new BufferedReader(file);
+            String dimval = in.readLine();
+            while ((dimval !=null)){
+                arm =dimval;           
+                dimval = in.readLine();
+                k++;
+            }
+            file.close();
+            in.close();
+             }catch(IOException exc) {
+                System.err.println("Erro");
+            }
+        System.out.println(k);
+        return k;
+    }
     
     public String Reduz(){
         setVis(this.vis-this.red1);
